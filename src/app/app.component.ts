@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-images-lazy-loading-demo';
+  imageItemCollection = [];
+
+  constructor() {
+    for (let i = 0; i < 100; i++) {
+      const url = 'http://via.placeholder.com/500x450?text=Image No ' + (i + 1);
+
+      this.imageItemCollection[i] = {
+        url: url,
+        show: false
+      };
+    }
+  }
 }
